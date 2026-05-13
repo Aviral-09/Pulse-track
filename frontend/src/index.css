@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #F8F5EE;
+    --bg-primary-rgb: 248, 245, 238;
+    --bg-secondary: #EEE8DD;
+    --bg-secondary-rgb: 238, 232, 221;
+    --bg-tertiary: #E5DED0;
+    
+    --text-primary: #1A1A1A;
+    --text-secondary: #5F5A54;
+    --text-tertiary: #8B857D;
+    --text-inverted: #F8F5EE;
+    
+    --border-light: rgba(216, 209, 199, 0.8);
+    --border-normal: #C8C1B7;
+    --border-hover: #A59F94;
+    
+    --accent-primary: #1A1A1A;
+    --accent-secondary: #F8F5EE;
+    --sidebar-width: 240px;
+    --topbar-height: 72px;
+  }
+
+  html.dark {
+    --bg-primary: #050505;
+    --bg-primary-rgb: 5, 5, 5;
+    --bg-secondary: #0a0a0a;
+    --bg-secondary-rgb: 10, 10, 10;
+    --bg-tertiary: #161616;
+    
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.75);
+    --text-tertiary: rgba(255, 255, 255, 0.5);
+    --text-inverted: #050505;
+    
+    --border-light: rgba(255, 255, 255, 0.1);
+    --border-normal: rgba(255, 255, 255, 0.15);
+    --border-hover: rgba(255, 255, 255, 0.3);
+    
+    --accent-primary: #ffffff;
+    --accent-secondary: #000000;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+/* Global smooth rendering */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+::selection {
+  background-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+/* Background Grid Pattern utility */
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, var(--border-light) 1px, transparent 1px), linear-gradient(to bottom, var(--border-light) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-normal);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
+}
+
+.dashboard-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-normal);
+  border-radius: 1rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.dashboard-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+html.dark .dashboard-card {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+html.dark .dashboard-card:hover {
+  box-shadow: 0 10px 30px -10px rgba(255, 255, 255, 0.05);
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.seo-heading {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  font-style: italic;
+}
+
+/* UI Structure utilities based on new design */
+.shared_page-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.shared_container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.Topbar_topbar {
+  height: var(--topbar-height);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-normal);
+  background-color: rgba(var(--bg-primary-rgb), 0.6);
+  backdrop-filter: blur(12px);
+  z-index: 40;
+  flex-shrink: 0;
+}
+
+.Sidebar_sidebar {
+  width: var(--sidebar-width);
+  height: 100%;
+  border-right: 1px solid var(--border-normal);
+  background-color: rgba(var(--bg-secondary-rgb), 0.3);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  z-index: 50;
+  flex-shrink: 0;
+}
