@@ -54,9 +54,9 @@ const DocsView = () => {
                 <div className="max-w-3xl space-y-12">
                     {activeSection === 'overview' && (
                         <article className="prose prose-invert prose-neutral">
-                            <h1 className="text-3xl font-black text-[var(--text-primary)] italic uppercase tracking-tight">Antigravity Overview</h1>
+                            <h1 className="text-3xl font-black text-[var(--text-primary)] italic uppercase tracking-tight">Pulse-Track Overview</h1>
                             <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
-                                Antigravity is a high-performance, real-time analytics engine designed for technical teams who need total visibility into product telemetry without the bloat of traditional SaaS suites.
+                                Pulse-Track is a high-performance, real-time analytics engine designed for technical teams who need total visibility into product telemetry without the bloat of traditional SaaS suites.
                             </p>
                             <div className="grid grid-cols-2 gap-8 mt-12">
                                 <div className="space-y-4">
@@ -110,13 +110,13 @@ const DocsView = () => {
                                 <div className="space-y-4">
                                     <h3 className="text-sm font-bold text-[var(--text-primary)] uppercase tracking-widest">1. Installation</h3>
                                     <pre className="bg-[var(--bg-primary)] p-6 rounded-2xl text-xs font-mono text-[var(--text-secondary)] border border-[var(--border-normal)]">
-                                        npm install @antigravity/sdk
+                                        npm install @pulse-track/sdk
                                     </pre>
                                 </div>
                                 <div className="space-y-4">
                                     <h3 className="text-sm font-bold text-[var(--text-primary)] uppercase tracking-widest">2. Initialization</h3>
                                     <pre className="bg-[var(--bg-primary)] p-6 rounded-2xl text-xs font-mono text-[var(--text-secondary)] border border-[var(--border-normal)]">
-                                        {`import { analytics } from '@antigravity/sdk';\n\nanalytics.init('YOUR_PUBLIC_KEY');`}
+                                        {`import { analytics } from '@pulse-track/sdk';\n\nanalytics.init('YOUR_PUBLIC_KEY');`}
                                     </pre>
                                 </div>
                                 <div className="space-y-4">
@@ -138,7 +138,7 @@ const DocsView = () => {
                                     <span>Strict Metadata Rule</span>
                                 </h4>
                                 <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
-                                    Antigravity enforces snake_case and verb_object formatting. Invalid event names will be rejected by the ingestion gateway.
+                                    Pulse-Track enforces snake_case and verb_object formatting. Invalid event names will be rejected by the ingestion gateway.
                                 </p>
                             </div>
 
@@ -163,7 +163,7 @@ const DocsView = () => {
 
                             <div className="space-y-4 pt-6 text-sm text-[var(--text-secondary)] leading-relaxed">
                                 <p><strong className="text-[var(--text-primary)]">Track Decisions:</strong> Don't track every pixel hover. Track meaningful user intent.</p>
-                                <p><strong className="text-[var(--text-primary)]">Properties:</strong> Include as much context as possible. Properties in Antigravity are indexed JSONB fields.</p>
+                                <p><strong className="text-[var(--text-primary)]">Properties:</strong> Include as much context as possible. Properties in Pulse-Track are indexed JSONB fields.</p>
                                 <p><strong className="text-[var(--text-primary)]">Versioning:</strong> Use `event_version` instead of renaming events to maintain historical continuity.</p>
                             </div>
                         </article>
@@ -173,7 +173,7 @@ const DocsView = () => {
                         <article className="space-y-8">
                             <h1 className="text-3xl font-black text-[var(--text-primary)] italic uppercase tracking-tight">Identity Handling</h1>
                             <p className="text-[var(--text-secondary)] leading-relaxed">
-                                Antigravity uses a shadow identity model. Every user begins as an anonymous ID stored in local browser state.
+                                Pulse-Track uses a shadow identity model. Every user begins as an anonymous ID stored in local browser state.
                             </p>
                             <div className="p-8 bg-[var(--bg-secondary)] border border-[var(--border-normal)] rounded-3xl space-y-6">
                                 <h3 className="text-[var(--text-primary)] font-bold tracking-tight">The Identify Call</h3>

@@ -134,7 +134,7 @@ const LandingPage = () => {
                 {/* Topbar */}
                 <header className={`h-[72px] px-8 flex items-center justify-between border-b backdrop-blur-md z-40 flex-shrink-0 transition-colors duration-500 ${c.topbarBg} ${c.borderLight}`}>
                     <div className="flex items-center space-x-4">
-                        <h1 className="text-base font-medium tracking-wide">Antigravity</h1>
+                        <h1 className="text-base font-medium tracking-wide">Pulse-Track</h1>
                         <div className={`h-4 w-px ${isDark ? 'bg-white/10' : 'bg-[#D8D1C7]'}`} />
                         <div className={`flex items-center space-x-2 px-2.5 py-1 rounded-full border ${isDark ? 'bg-white/5 border-white/10' : 'bg-[#EEE8DD] border-[#D8D1C7]'}`}>
                             <div className={`w-1.5 h-1.5 rounded-full animate-pulse ${c.dot}`} />
@@ -169,7 +169,7 @@ const LandingPage = () => {
                                 <div className="flex flex-col justify-center h-full max-w-2xl">
                                     <div className={`inline-flex items-center space-x-2 px-3 py-1.5 rounded-full border w-fit mb-8 ${isDark ? 'bg-white/5 border-white/10' : 'bg-[#EEE8DD] border-[#D8D1C7]'}`}>
                                         <Terminal size={12} className={c.textMuted} />
-                                        <span className={`text-[10px] font-medium uppercase tracking-widest ${c.textMuted}`}>Antigravity Telemetry</span>
+                                        <span className={`text-[10px] font-medium uppercase tracking-widest ${c.textMuted}`}>Pulse-Track Telemetry</span>
                                     </div>
                                     <h2 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tighter leading-[1.1] mb-6">
                                         Precision<br />
@@ -236,9 +236,9 @@ const LandingPage = () => {
                                             <div className={`w-2.5 h-2.5 rounded-full ${isDark ? 'bg-white/20' : 'bg-[#D8D1C7]'}`} />
                                         </div>
                                         <span className={c.textSubtle}>// Initialize Telemetry Pipeline</span><br />
-                                        <span className={c.textHighlight}>await</span> <span className={c.text}>Antigravity</span>.<span className={c.textHighlight}>init</span>(<span className={isDark ? 'text-white/50' : 'text-[#5F5A54]'}>&apos;PROJ_KEY_V1&apos;</span>);<br /><br />
+                                        <span className={c.textHighlight}>await</span> <span className={c.text}>PulseTrack</span>.<span className={c.textHighlight}>init</span>(<span className={isDark ? 'text-white/50' : 'text-[#5F5A54]'}>&apos;PROJ_KEY_V1&apos;</span>);<br /><br />
                                         <span className={c.textSubtle}>// Identity Stitching</span><br />
-                                        <span className={c.text}>Antigravity</span>.<span className={c.textHighlight}>identify</span>(<span className={isDark ? 'text-white/50' : 'text-[#5F5A54]'}>&apos;usr_772&apos;</span>, &#123;<br />
+                                        <span className={c.text}>PulseTrack</span>.<span className={c.textHighlight}>identify</span>(<span className={isDark ? 'text-white/50' : 'text-[#5F5A54]'}>&apos;usr_772&apos;</span>, &#123;<br />
                                         &nbsp;&nbsp;<span className={c.textMuted}>tier</span>: <span className={isDark ? 'text-white/50' : 'text-[#5F5A54]'}>&apos;premium&apos;</span>,<br />
                                         &nbsp;&nbsp;<span className={c.textMuted}>region</span>: <span className={isDark ? 'text-white/50' : 'text-[#5F5A54]'}>&apos;eu-west-1&apos;</span><br />
                                         &#125;);
@@ -324,7 +324,7 @@ const LandingPage = () => {
                         </div>
                         
                         <footer className={`mt-16 text-center opacity-30 text-[10px] font-medium uppercase tracking-[0.3em] ${c.text}`}>
-                            &copy; 2024 Antigravity Telemetry Inc // All Systems Autonomous
+                            &copy; 2024 Pulse-Track Telemetry Inc // All Systems Autonomous
                         </footer>
                     </div>
                 </main>

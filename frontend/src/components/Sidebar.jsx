@@ -33,7 +33,7 @@ const Sidebar = ({ activeTab, setActiveTab, enabledModules = [] }) => {
             <div className="h-[72px] flex items-center px-6 border-b border-[var(--border-normal)]">
                 <button className="flex items-center space-x-3 text-[var(--text-primary)] hover:text-[var(--text-secondary)] transition-colors">
                     <ChevronLeft size={20} strokeWidth={1.5} />
-                    <span className="text-lg font-bold tracking-tight uppercase italic">Antigravity</span>
+                    <span className="text-lg font-bold tracking-tight uppercase italic">Pulse-Track</span>
                 </button>
             </div>
 

@@ -11,7 +11,7 @@ const startServer = async () => {
         console.log('Database connected successfully.');
 
         app.listen(PORT, () => {
-            console.log(`[Antigravity] Production Server running on port ${PORT}`);
+            console.log(`[Pulse-Track] Production Server running on port ${PORT}`);
         });
     } catch (err) {
         console.error('Failed to connect to the database', err);

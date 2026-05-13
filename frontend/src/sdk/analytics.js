@@ -9,7 +9,7 @@ const getAnonymousId = () => {
 
 class AnalyticsSDK {
   constructor() {
-    this.apiUrl = 'http://localhost:6543/v1';
+    this.apiUrl = '/v1';
     this.projectId = null;
     this.userId = null;
     this.anonymousId = getAnonymousId();

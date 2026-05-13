@@ -36,7 +36,7 @@ const CohortsView = ({ projectId }) => {
         if (!projectId) return;
         setLoading(true);
         try {
-            const res = await axios.get(`http://localhost:6543/v1/cohorts?project_id=${projectId}`);
+            const res = await axios.get(`/v1/cohorts?project_id=${projectId}`);
             setCohorts(res.data);
         } catch (err) {
             console.error(err);
@@ -48,7 +48,7 @@ const CohortsView = ({ projectId }) => {
     const fetchEvents = async () => {
         if (!projectId) return;
         try {
-            const res = await axios.get(`http://localhost:6543/v1/analytics/events?project_id=${projectId}`);
+            const res = await axios.get(`/v1/analytics/events?project_id=${projectId}`);
             setEventOptions(res.data.map(e => e.event_name));
         } catch (err) {
             console.error("Failed to load events", err);
@@ -62,7 +62,7 @@ const CohortsView = ({ projectId }) => {
 
     const handlePreview = async () => {
         try {
-            const res = await axios.post('http://localhost:6543/v1/cohorts/preview', {
+            const res = await axios.post('/v1/cohorts/preview', {
                 project_id: projectId,
                 definition: newCohort.definition
             });
@@ -76,7 +76,7 @@ const CohortsView = ({ projectId }) => {
         if (!newCohort.name || newCohort.definition.rules.some(r => !r.event)) return;
         setSaving(true);
         try {
-            await axios.post('http://localhost:6543/v1/cohorts', {
+            await axios.post('/v1/cohorts', {
                 project_id: projectId,
                 ...newCohort
             });
@@ -98,7 +98,7 @@ const CohortsView = ({ projectId }) => {
     const handleDelete = async (id) => {
         if (!confirm('Are you sure you want to delete this cohort?')) return;
         try {
-            await axios.delete(`http://localhost:6543/v1/cohorts/${id}`);
+            await axios.delete(`/v1/cohorts/${id}`);
             fetchCohorts();
         } catch (err) {
             console.error(err);

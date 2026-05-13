@@ -29,7 +29,7 @@ const Onboarding = () => {
         console.log('[Frontend] Initiating project creation...', project);
         setLoading(true);
         try {
-            const res = await axios.post('http://localhost:6543/v1/analytics/projects', project);
+            const res = await axios.post('/v1/analytics/projects', project);
             console.log('[Frontend] Project created successfully:', res.data);
             setCreatedProject(res.data);
             analytics.init(res.data.public_key);
@@ -47,7 +47,7 @@ const Onboarding = () => {
         setSimulatedCount(c => c + 1);
     };
 
-    const sdkSnippet = `import { analytics } from '@antigravity/sdk';
+    const sdkSnippet = `import { analytics } from '@pulse-track/sdk';
 
 analytics.init('${createdProject?.public_key || 'YOUR_PUBLIC_KEY'}');
 analytics.track('page_view');`;
@@ -122,7 +122,7 @@ analytics.track('page_view');`;
                                     type="text"
                                     value={project.name}
                                     onChange={(e) => setProject({ ...project, name: e.target.value })}
-                                    placeholder="e.g. Antigravity Web"
+                                    placeholder="e.g. Pulse-Track Web"
                                     className="w-full bg-[var(--bg-secondary)] border border-[var(--border-normal)] rounded-2xl px-6 py-4 text-[var(--text-primary)] focus:outline-none focus:border-[var(--accent-primary)] focus:ring-1 focus:ring-[var(--accent-primary)] transition-all placeholder:text-[var(--text-tertiary)]"
                                     required
                                 />

@@ -37,7 +37,7 @@ const Dashboard = () => {
     useEffect(() => {
         const loadProjects = async () => {
             try {
-                const res = await axios.get('http://localhost:6543/v1/analytics/projects');
+                const res = await axios.get('/v1/analytics/projects');
                 setProjects(res.data);
                 if (res.data.length > 0 && !selectedProject) {
                     setSelectedProject(res.data[0]);
@@ -286,7 +286,7 @@ const Dashboard = () => {
 
                                                                     // Persist
                                                                     try {
-                                                                        await axios.patch(`http://localhost:6543/v1/analytics/projects/${selectedProject.id}/config`, { enabled_modules: newModules });
+                                                                        await axios.patch(`/v1/analytics/projects/${selectedProject.id}/config`, { enabled_modules: newModules });
                                                                     } catch (e) {
                                                                         console.error("Failed to save config", e);
                                                                     }
