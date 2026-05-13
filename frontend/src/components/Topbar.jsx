@@ -29,12 +29,12 @@ const Topbar = ({
 
     useEffect(() => {
         if (currentProject?.id) {
-            axios.get(`/v1/analytics/usage?project_id=${currentProject.id}`)
+            axios.get(`/api/v1/analytics/usage?project_id=${currentProject.id}`)
                 .then(res => setUsage(res.data))
                 .catch(err => console.error('Usage fetch failed', err));
 
             // Fetch cohorts for the selector
-            axios.get(`/v1/cohorts?project_id=${currentProject.id}`)
+            axios.get(`/api/v1/cohorts?project_id=${currentProject.id}`)
                 .then(res => setCohorts(res.data))
                 .catch(err => console.error('Cohorts fetch failed', err));
         } else {

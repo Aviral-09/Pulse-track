@@ -29,7 +29,7 @@ const Onboarding = () => {
         console.log('[Frontend] Initiating project creation...', project);
         setLoading(true);
         try {
-            const res = await axios.post('/v1/analytics/projects', project);
+            const res = await axios.post('/api/v1/analytics/projects', project);
             console.log('[Frontend] Project created successfully:', res.data);
             setCreatedProject(res.data);
             analytics.init(res.data.public_key);

@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import axios from 'axios';
 
-const API_BASE = '/v1/analytics';
+const API_BASE = '/api/v1/analytics';
 
 export const useAnalytics = (projectId, timeRange = '24h', pollingInterval = 30000, enabledModules = [], cohortId = null) => {
     const [overview, setOverview] = useState({});

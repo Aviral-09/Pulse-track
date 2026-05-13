@@ -20,6 +20,14 @@ app.use(cors());
 app.use(express.json({ limit: '64kb' }));
 app.use(apiLimiter);
 
+// Strip /api prefix if it exists (for Vercel routing)
+app.use((req, res, next) => {
+    if (req.url.startsWith('/api')) {
+        req.url = req.url.slice(4);
+    }
+    next();
+});
+
 // Routes
 app.use('/v1/track', trackRoutes);
 app.use('/v1/analytics', analyticsRoutes);
